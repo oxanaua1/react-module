@@ -1,12 +1,15 @@
-
 import './App.css';
 
-function App() {
-  return (
-    <div>
 
-    </div>
-  );
+import Launches from "./components/Launches/Launches";
+
+
+function App() {
+    return (
+        <div>
+            <Launches/>
+        </div>
+    );
 }
 
 export default App;
