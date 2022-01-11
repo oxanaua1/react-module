@@ -15,7 +15,7 @@ const Users = () => {
 
     }, []);
 
-    return(
+    return (
         <div>
             {users.map(users => <User
                 key={users.id}

@@ -1,7 +1,10 @@
+import "./App.css"
+
 import Users from "./components/Users/Users";
 import Posts from "./components/Posts/Posts";
 import Commits from "./components/Commits/Commits";
-import "./App.css"
+
+
 
 function App() {
     return (
@@ -13,7 +16,6 @@ function App() {
             </div>
             <div className={'Footer'}><Commits/></div>
         </div>
-
 
 
     );
