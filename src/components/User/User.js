@@ -1,16 +1,20 @@
 import React from 'react';
 
+import './UserStyles.css';
+
 const User = (props) => {
 
     let {id, name, getUserId} = props;
 
 
     return (
-        <div>
+        <div className={'Wrapper'}>
 
-            <h3>{id}. {name}</h3>
-            <button onClick={()=>{getUserId(id)}}>Get Details </button>
-
+            <h3 className={'UserContent'}>{id}. {name}</h3>
+            <button onClick={() => {
+                getUserId(id)
+            }}>Get Details
+            </button>
 
 
         </div>

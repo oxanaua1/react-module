@@ -1,14 +1,15 @@
+import './UserDetailsStyles.css'
 
+const UserDetails = ({user, getUserPosts}) => {
 
-const UserDetails = (props) => {
-
-    let {
+    const {
         id, name, username, email, street, suite, city, zipcode, lat, lng,
         phone, website, companyName, catchPhrase, bs
-    } = props
+
+    } = user;
 
     return (
-        <div>
+        <div className={'UserDetails'}>
             <div>
                 <h2>{id}. {name}</h2>
                 <h3>Username: {username}, email: {email}</h3>
@@ -30,9 +31,7 @@ const UserDetails = (props) => {
                 <div>Company bs: {bs}</div>
 
 
-                <button onClick={(getUserPosts)=>{
-
-                }}>Show user's posts</button>
+                <button onClick={() => getUserPosts(id)}>Show user's posts</button>
 
 
             </div>

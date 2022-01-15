@@ -1,42 +1,34 @@
-import React, {useEffect, useState} from 'react';
-import User from "../User/User";
+import React, {useState} from 'react';
+
+import {postsService} from "../../services/posts.service";
+import Post from "../Post/Post";
 
 
 const Posts = () => {
 
     const [posts, setPosts] = useState([]);
 
-    useEffect(() => {
+    const getUserPosts = (id) => {
 
-        // const getUserPosts = () => {  }
-
-            fetch(`https://jsonplaceholder.typicode.com/${User.id}/posts`)
-                .then(value => value.json())
-                .then(value => {
-                    setPosts(value)
-                    console.log(value);
-                });
-
-
-
-
-
-
-
-    }, [])
+        postsService.getAllByUserId(id).then(value => {
+            setPosts(value)
+        });
+    }
 
 
     return (
         <div>
 
-            {posts.map(value =>
-                <div>
-                    key={value.id}
-                    id={value.id}
-                    title={value.title}
-                    {/*getUserPosts={getUserPosts}*/}
+            {posts.map(value => <Post
 
-                </div>
+                    posts={posts}
+
+                    // key={value.id}
+                    // id={value.id}
+                    // title={value.title}
+                    getUserPosts={getUserPosts}
+
+                />
             )}
         </div>
     )

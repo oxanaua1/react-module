@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
+import './UsersStyles.css'
 
 
 import User from "../User/User";
-import UserDetails from "../User/UserDetails"
+import UserDetails from "../UserDetails/UserDetails"
+import {userService} from "../../services/users.service";
 
 
 const Users = () => {
@@ -10,30 +12,28 @@ const Users = () => {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(value => value.json())
-            .then(value => {
-                setUsers(value);
+
+        userService.getAll().then(value => {
+            setUsers(value);
 
 
-            });
+        });
 
     }, []);
 
     const getUserId = (id) => {
-        fetch('https://jsonplaceholder.typicode.com/users/' + id)
-            .then(value => value.json())
-            .then(value => {
-                setUser(value);
+        userService.getById(id).then(value => {
+            setUser(value);
 
-            });
+
+        });
 
 
     }
 
     return (
         <div className={'Wrapper'}>
-            <div className={'UsersAll'}>
+            <div>
                 {users.map(value =>
                     <User
                         key={value.id}
@@ -44,7 +44,7 @@ const Users = () => {
                 )}
             </div>
 
-            <div className={'UserDetails'}>{
+            <div>{
 
                 user &&
                 <div>
