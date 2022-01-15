@@ -1,0 +1,17 @@
+.Wrapper {
+    display: flex;
+    flex-direction: row;
+    background: lemonchiffon;
+}
+
+.UsersAll {
+    padding-left: 10px;
+    width: 300px;
+}
+
+.UserDetails {
+    padding-left: 20px;
+
+    background: lemonchiffon;
+    max-height: fit-content;
+}
