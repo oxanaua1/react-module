@@ -1,4 +1,4 @@
-import {urls} from "../components/config/urls";
+import {urls} from "../config/urls";
 
 const getAllByUserId = (id) => {
  return    fetch(`${urls.posts}?userId=${id}`)

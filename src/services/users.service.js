@@ -1,4 +1,4 @@
-import {urls} from "../components/config/urls";
+import {urls} from "../config/urls";
 
 const getAll = () => {
  return    fetch(urls.users)
