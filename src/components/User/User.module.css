@@ -1,0 +1,20 @@
+.wrap {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid;
+    background: lemonchiffon;
+    row-gap: 10px;
+    margin-top: 10px;
+
+}
+.userContent {
+    margin-right: 20px;
+    padding: 10px;
+
+}
+.userBtn {
+    background: lightblue;
+    border: none;
+    border-radius: 10px;
+    margin: 5px;
+}

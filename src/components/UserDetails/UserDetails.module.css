@@ -1,0 +1,14 @@
+.userDetailsContent {
+    margin: 20px;
+    background: lightblue;
+    padding: 10px;
+
+}
+
+.userDetailsBtn {
+
+    background: lightgoldenrodyellow;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 50px;
+}
