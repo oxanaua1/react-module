@@ -1,19 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-import {postsService} from "../../services/posts.service";
+
 import Post from "../Post/Post";
 
 
-const Posts = () => {
+const Posts = ({posts}) => {
 
-    const [posts, setPosts] = useState([]);
-
-    const getUserPosts = (id) => {
-
-        postsService.getAllByUserId(id).then(value => {
-            setPosts(value)
-        });
-    }
 
 
     return (
@@ -21,12 +13,10 @@ const Posts = () => {
 
             {posts.map(value => <Post
 
-                    posts={posts}
+                    key={value.id}
+                    id={value.id}
+                    title={value.title}
 
-                    // key={value.id}
-                    // id={value.id}
-                    // title={value.title}
-                    getUserPosts={getUserPosts}
 
                 />
             )}

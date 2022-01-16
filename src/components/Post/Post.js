@@ -1,11 +1,13 @@
 import React from 'react';
 
-const Post = ({props}) => {
+import './PostStyles.css';
+
+const Post = (props) => {
 
     const {id, title} = props
     return (
-        <div>
-            {id} {title}
+        <div className={'Wrap'}>
+           Post Id: {id}) Title: {title}
         </div>
     );
 };

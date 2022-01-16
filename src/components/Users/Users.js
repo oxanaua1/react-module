@@ -7,7 +7,7 @@ import UserDetails from "../UserDetails/UserDetails"
 import {userService} from "../../services/users.service";
 
 
-const Users = () => {
+const Users = ({getUserPosts}) => {
     const [users, setUsers] = useState([]);
     const [user, setUser] = useState(null);
 
@@ -15,8 +15,6 @@ const Users = () => {
 
         userService.getAll().then(value => {
             setUsers(value);
-
-
         });
 
     }, []);
@@ -24,11 +22,7 @@ const Users = () => {
     const getUserId = (id) => {
         userService.getById(id).then(value => {
             setUser(value);
-
-
         });
-
-
     }
 
     return (
@@ -65,13 +59,12 @@ const Users = () => {
                         companyName={user.company.name}
                         catchPhrase={user.company.catchPhrase}
                         bs={user.company.name}
+                        getUserPosts={getUserPosts}
 
 
                     />
                 </div>
             }</div>
-
-
         </div>
     );
 };
