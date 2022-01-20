@@ -1,0 +1,15 @@
+.wrapper {
+    background-color: cornflowerblue;
+    font-size: x-large;
+    padding: 10px;
+}
+
+.wrapper button {
+    background-color: cyan;
+    height: 30px;
+
+}
+
+.wrapper a {
+    text-decoration: none;
+}

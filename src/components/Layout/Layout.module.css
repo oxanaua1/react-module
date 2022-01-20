@@ -1,0 +1,19 @@
+.header {
+    min-height: 70px;
+    background-color: navy;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 150px;
+}
+
+.header a {
+    font-size: 30px;
+    color: snow;
+    text-decoration: none;
+}
+
+.header a[class='active'] {
+    color: yellow;
+}
+

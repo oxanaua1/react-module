@@ -1,0 +1,16 @@
+.wrap {
+    background-color: cornflowerblue;
+    font-size: large;
+    padding: 10px;
+}
+
+.wrap button {
+    margin-top: 10px;
+    background-color: darkturquoise;
+    height: 30px;
+
+}
+
+.wrap a {
+    text-decoration: none;
+}
