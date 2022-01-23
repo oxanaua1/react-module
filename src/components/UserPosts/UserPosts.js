@@ -4,7 +4,7 @@ import css from './UserPosts.module.css'
 
 const UserPosts = ({userPost}) => {
 
-    let {id, userId, title, body} = userPost
+    let {id, userId, title, body} = userPost;
 
     return (
         <div className={css.UserPostsWrapper}>

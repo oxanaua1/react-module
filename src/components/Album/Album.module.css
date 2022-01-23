@@ -1,10 +1,9 @@
-.userWrapper {
+.wrap {
     display: flex;
     flex-direction: column;
+    gap: 10px;
     align-items: center;
-    background-color: cornsilk;
-    padding: 10px;
-    width: 500px;
+
 }
 
 .btn {

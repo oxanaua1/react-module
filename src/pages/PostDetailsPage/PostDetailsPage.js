@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {Link, useLocation, useParams} from "react-router-dom";
-import {Outlet} from "react-router-dom";
+import {Link, useLocation, useParams, Outlet} from 'react-router-dom';
 
-import {postService} from "../../services/post.service";
+import {postService} from '../../services/post.service';
 import css from './PostDetailsPage.module.css'
 
 
 const PostDetailsPage = () => {
+
     const {id} = useParams();
     const [post, setPost] = useState(null);
     const {state} = useLocation();
@@ -24,17 +24,17 @@ const PostDetailsPage = () => {
         <div>
 
             {post &&
-                <div className={css.wrap}>
-                    <div> Id: {post.id} </div>
-                    <div> userId: {post.userId} </div>
-                    <div> title: {post.title} </div>
-                    <div> body: {post.body} </div>
+            <div className={css.wrap}>
+                <div> Id: {post.id} </div>
+                <div> userId: {post.userId} </div>
+                <div> title: {post.title} </div>
+                <div> body: {post.body} </div>
 
-                    <button>
-                        <Link to={id.toString()}> Show Post Comments</Link>
-                    </button>
+                <button>
+                    <Link to={'comments'}> Show Post Comments</Link>
+                </button>
 
-                </div>
+            </div>
 
             }
             <div><Outlet/></div>

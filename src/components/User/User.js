@@ -1,7 +1,8 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link} from 'react-router-dom';
 
 import css from './User.module.css'
+
 
 const User = ({user}) => {
 
@@ -9,7 +10,16 @@ const User = ({user}) => {
 
     return (
         <div className={css.userWrapper}>
-            <Link to={id.toString()} state={user}>{id}. {name}</Link>
+
+            <h4>{id}. {name}</h4>
+            <button className={css.btn}>
+                <Link to={id.toString()} state={user}>Show user's details</Link>
+            </button>
+            <hr/>
+            <button className={css.btn}>
+                <Link to={`${id}/albums`}>Albums</Link>
+            </button>
+
         </div>
     );
 };
