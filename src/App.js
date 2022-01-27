@@ -31,6 +31,7 @@ const reducer = (state, action) => {
 }
 
 
+
 function App() {
     const [state, dispatch] = useReducer(reducer, {count: 0, count1: 0, count2: 0});
 
