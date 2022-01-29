@@ -2,15 +2,10 @@ import React from 'react';
 import {useForm} from "react-hook-form";
 
 
-
-
-
-
 const Form = ({getFormData, reducer}) => {
 
 
-
-    const {handleSubmit, register,formState: {errors}, reset} = useForm();
+    const {handleSubmit, register, formState: {errors}, reset} = useForm();
     console.log(errors)
 
     const submit = (data) => {
@@ -20,7 +15,6 @@ const Form = ({getFormData, reducer}) => {
 
     return (
         <div>
-
 
 
             <form onSubmit={(handleSubmit((submit)))}>
