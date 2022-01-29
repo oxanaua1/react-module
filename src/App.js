@@ -1,6 +1,8 @@
 import './App.css';
 import Form from "./components/Form/Form";
 import React, {useReducer} from "react";
+import Cat from "./components/Cat/Cat";
+import Dog from "./components/Dog/Dog";
 
 
 const reducer = (state, action) => {
@@ -21,21 +23,29 @@ const reducer = (state, action) => {
 function App() {
 
 
-
     const [state, dispatch] = useReducer(reducer, {cat: '', dog: ''});
 
-    const getFormData = (data) => {
-        dispatch({type: 'cat', id: new Date().getTime(), ...data})
-        dispatch({type: 'dog'})
+    const getFormData = (dataCat, dataDog) => {
+
+        // dispatch({type: 'cat' } id: new Date().getTime(), ...dataCat)
+        // dispatch({type: 'dog'} = {id: new Date().getTime(), ...dataDog})
+    }
+
+
+    const getFromId = (id) => {
+
+
     }
 
 
     return (
         <div>
             <Form getFormData={getFormData} reducer={reducer}/>
+            <Cat getFromId={getFromId}/>
+            <Dog getFromId={getFromId}/>
 
-            <div>{state.cat}</div>
-            <div>{state.dog}</div>
+            {/*<div>{state.cat}</div>*/}
+            {/*<div>{state.dog}</div>*/}
 
         </div>
     );
