@@ -1,46 +1,42 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
 
+import css from './Form.module.css'
 
-const Form = ({getFormData, reducer}) => {
 
+const Form = ({dispatch}) => {
 
-    const {handleSubmit, register, formState: {errors}, reset} = useForm();
-    console.log(errors)
+    const {handleSubmit, register, reset, getValues} = useForm();
 
-    const submitCat = (dataCat) => {
-        getFormData(dataCat)
-        reset(dataCat)
-        console.log(dataCat)
+    const submit = () => {
+        reset()
     }
-    const submitDog = (dataDog) => {
-        getFormData(dataDog)
-        reset(dataDog)
-        console.log(dataDog)
-    }
+
 
     return (
         <div>
 
 
-            <form onSubmit={(handleSubmit((submitCat)))}>
-                <label>Add Cat <input type="text" defaultValue={''} {...register('cat')}/></label>
-                <button>save</button>
+            <form onSubmit={handleSubmit(submit)} className={css.form}>
+                <div><label> Add Cat <input type="text" defaultValue={''} {...register('cat')}/></label>
+                    <button onClick={() => {
+                        dispatch({type: 'ADD_CAT', payload: getValues()})
+                    }}>save
+                    </button>
+                </div>
+
+                <div><label> Add Dog <input type="text" defaultValue={''} {...register('dog')}/></label>
+                    <button onClick={() =>
+                        dispatch({type: 'ADD_DOG', payload: getValues()}
+                        )}>save
+                    </button>
+                </div>
+
             </form>
-
-            <hr/>
-
-            <form onSubmit={(handleSubmit((submitDog)))}>
-                <label>Add Dog <input type="text" defaultValue={''} {...register('dog')}/></label>
-                <button>save</button>
-            </form>
-
-            <hr/>
-            
-
 
         </div>
     );
 };
 
-export default Form;
+export {Form};
+

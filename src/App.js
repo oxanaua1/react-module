@@ -1,51 +1,39 @@
 import './App.css';
-import Form from "./components/Form/Form";
 import React, {useReducer} from "react";
-import Cat from "./components/Cat/Cat";
-import Dog from "./components/Dog/Dog";
+
+import {Cats, Dogs, Form} from "./components";
+import css from './App.module.css'
 
 
 const reducer = (state, action) => {
 
     switch (action.type) {
-        case 'cat':
-            return {...state, cat: state.cat};
-        case'dog':
-            return {...state, dog: state.dog};
+        case 'ADD_CAT':
+            return {...state, cats: [...state.cats, {id: new Date().getTime(), cat: action.payload.cat}]};
+        case'ADD_DOG':
+            return {...state, dogs: [...state.dogs, {id: new Date().getTime(), dog: action.payload.dog}]};
+        case 'DELETE_CAT':
+            return {...state, cats: state.cats.filter(cat => cat.id !== action.payload.id)};
+        case 'DELETE_DOG':
+            return {...state, dogs: state.dogs.filter(dog => dog.id !== action.payload.id)};
+
         default :
             return state
     }
 
-
-}
-
+};
 
 function App() {
 
-
-    const [state, dispatch] = useReducer(reducer, {cat: '', dog: ''});
-
-    const getFormData = (dataCat, dataDog) => {
-
-        // dispatch({type: 'cat' } id: new Date().getTime(), ...dataCat)
-        // dispatch({type: 'dog'} = {id: new Date().getTime(), ...dataDog})
-    }
-
-
-    const getFromId = (id) => {
-
-
-    }
-
+    const [{cats, dogs}, dispatch] = useReducer(reducer, {cats: [], dogs: []});
 
     return (
-        <div>
-            <Form getFormData={getFormData} reducer={reducer}/>
-            <Cat getFromId={getFromId}/>
-            <Dog getFromId={getFromId}/>
-
-            {/*<div>{state.cat}</div>*/}
-            {/*<div>{state.dog}</div>*/}
+        <div className={css.wrapper}>
+            <Form dispatch={dispatch}/>
+            <div className={css.main}>
+                <Cats cats={cats} dispatch={dispatch}/>
+                <Dogs dogs={dogs} dispatch={dispatch}/>
+            </div>
 
         </div>
     );

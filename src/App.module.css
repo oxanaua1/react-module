@@ -1,0 +1,15 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    background-color: cornsilk;
+}
+
+.wrapper {
+    width: 700px;
+    padding: 40px;
+}
+
+.main {
+    display: flex;
+
+}
