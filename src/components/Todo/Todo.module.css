@@ -1,0 +1,14 @@
+.changed {
+    text-decoration: line-through;
+}
+
+.todo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.todo button {
+    background-color: cyan;
+}
