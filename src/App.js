@@ -1,12 +1,16 @@
-
 import './App.css';
+import {Cars, Form} from './components/index';
+
 
 function App() {
-  return (
-    <div>
+    return (
+        <div>
+            <Form/>
+            <Cars/>
 
-    </div>
-  );
+
+        </div>
+    );
 }
 
 export default App;
