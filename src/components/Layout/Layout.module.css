@@ -1,0 +1,24 @@
+.layoutWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: cornflowerblue;
+    margin: 20px;
+    height: 50px;;
+}
+
+.layoutOutlet {
+    margin: 20px;
+
+}
+
+.layoutWrapper a {
+    font-size: 30px;
+    color: snow;
+    text-decoration: none;
+}
+
+.layoutWrapper a[class='active'] {
+    color: yellow;
+}

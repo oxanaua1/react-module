@@ -1,3 +1,4 @@
-export * from './Form/Form'
-export * from './Cars/Cars'
-export * from './Car/Car'
+export * from './User/User.js';
+export * from './Post/Post.js';
+export * from './Comment/Comment.js';
+export * from './Layout/Layout';
